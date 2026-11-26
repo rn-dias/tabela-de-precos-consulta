@@ -110,7 +110,7 @@ h1 {
 .table-scroll { overflow-x: auto; border: 1px solid #c8d7e7; border-radius: 12px; background: var(--paper) }
 table {
   border-collapse: separate; border-spacing: 0; table-layout: auto;
-  width: 100%; min-width: 970px; font-size: .89rem;
+  width: max-content; min-width: max(100%,970px); font-size: .89rem;
 }
 .product-col { width: auto }
 .height-col, .grade-col { width: 62px }
@@ -132,7 +132,7 @@ thead #price-column { position: sticky; right: 0; z-index: 1; border-right: 0 }
 .product-group:nth-of-type(even) { background: #f3f7fc }
 .product-group:hover { background: #eaf3fd }
 .product-group .product-description { padding-inline: 14px; text-align: left; font-weight: 690 }
-.product-name { white-space: nowrap }
+.product-group .product-name { display: inline-block; width: max-content; white-space: nowrap; overflow-wrap: normal; word-break: normal }
 .product-maker { display: block; margin-top: 2px; color: var(--muted); font-size: .80rem; font-weight: 600 }
 .product-code { color: var(--deep); text-align: center; font-weight: 700; white-space: nowrap }
 .grade-cell { min-width: 55px; text-align: center; font-variant-numeric: tabular-nums; overflow-wrap: anywhere }
