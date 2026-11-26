@@ -109,14 +109,14 @@ h1 {
 .results-heading span { color: var(--muted); font-size: .91rem }
 .table-scroll { overflow-x: auto; border: 1px solid #c8d7e7; border-radius: 12px; background: var(--paper) }
 table {
-  border-collapse: separate; border-spacing: 0; table-layout: fixed;
+  border-collapse: separate; border-spacing: 0; table-layout: auto;
   width: 100%; min-width: 970px; font-size: .89rem;
 }
-.product-col { width: 33% }
-.height-col, .grade-col { width: 5.6% }
-.diameter-col { width: 7.8% }
-.code-col { width: 10% }
-.price-col { width: 10% }
+.product-col { width: auto }
+.height-col, .grade-col { width: 62px }
+.diameter-col { width: 88px }
+.code-col { width: 112px }
+.price-col { width: 122px }
 thead th {
   padding: 9px 6px; color: white; background: var(--header-black); text-align: center;
   vertical-align: middle; font-weight: 720; border-right: 1px solid #ffffff31;
@@ -132,10 +132,10 @@ thead #price-column { position: sticky; right: 0; z-index: 1; border-right: 0 }
 .product-group:nth-of-type(even) { background: #f3f7fc }
 .product-group:hover { background: #eaf3fd }
 .product-group .product-description { padding-inline: 14px; text-align: left; font-weight: 690 }
-.product-name { overflow-wrap: anywhere }
+.product-name { white-space: nowrap }
 .product-maker { display: block; margin-top: 2px; color: var(--muted); font-size: .80rem; font-weight: 600 }
 .product-code { color: var(--deep); text-align: center; font-weight: 700; white-space: nowrap }
-.grade-cell { text-align: center; font-variant-numeric: tabular-nums; overflow-wrap: anywhere }
+.grade-cell { min-width: 55px; text-align: center; font-variant-numeric: tabular-nums; overflow-wrap: anywhere }
 .product-group .product-price {
   position: sticky; right: 0; background: var(--paper); border-left: 1px solid #dce6f0;
   border-right: 0; text-align: center; font-variant-numeric: tabular-nums; font-weight: 750;
