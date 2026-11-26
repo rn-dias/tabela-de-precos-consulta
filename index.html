@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tabela de Preços_Consulta</title>
+<meta name="theme-color" content="#081d3f">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="bar-inner">
+    <div class="bar-identity">
+      <span class="bar-title">Consulta de lentes</span>
+
+    </div>
+    
+  </div>
+</header>
+<main>
+  <section class="intro" aria-labelledby="title">
+    <div class="intro-content">
+      <div class="intro-banner">
+        <h1 id="title">Tabela de Preços_Consulta</h1>
+        <p class="intro-copy">Consulte preços e grades de lentes.</p>
+      </div>
+      <form id="search" role="search">
+        <div class="search-control">
+          <label for="query">Código SC9 ou nome da lente</label>
+          <div class="search-field">
+            <span aria-hidden="true" class="magnify"></span>
+            <input id="query" type="search" placeholder="Buscar lente" autocomplete="off" spellcheck="false">
+            <button id="clear" type="button" hidden>Limpar</button>
+          </div>
+        </div>
+        <div class="manufacturer-filter" id="manufacturer-filter" hidden>
+          <label for="manufacturer">Fabricante</label>
+          <div class="select-field">
+            <select id="manufacturer"><option value="">Todos os fabricantes</option></select>
+          </div>
+        </div>
+        <div class="table-control">
+          <span id="price-table-label">Tabela de preço</span>
+          <button id="open-prices" type="button" aria-labelledby="price-table-label price-table-value" aria-haspopup="dialog">
+            <span id="price-table-value">Sugerido</span>
+          </button>
+        </div>
+      </form>
+      <p id="source-tag" class="source-tag" role="status" hidden></p>
+      
+    </div>
+  </section>
+  <aside class="grade-rule" aria-labelledby="rule-title">
+    <strong id="rule-title">Regra importante</strong>
+    <p>A soma do esférico + cilíndrico (em módulo) não pode ultrapassar a dioptria esférica de cada produto.</p>
+  </aside>
+  <section id="results" aria-labelledby="results-title" hidden>
+    <div class="results-heading">
+      <h2 id="results-title">Produtos</h2>
+      <span id="count" role="status"></span>
+    </div>
+    <p class="empty" id="empty" hidden></p>
+    <div class="table-scroll" id="table-scroll" tabindex="0" role="region" aria-label="Tabela de produtos e preços" hidden>
+      <table id="product-table" aria-label="Preços e disponibilidade das lentes">
+        <colgroup><col class="product-col"></colgroup>
+        <colgroup><col class="height-col"><col span="6" class="grade-col"><col class="diameter-col"></colgroup>
+        <colgroup><col class="code-col"><col class="price-col"></colgroup>
+        <thead>
+          <tr>
+            <th scope="col" rowspan="2" class="description-head">Descrição do produto</th>
+            <th scope="colgroup" colspan="8" class="grade-head">Disponibilidade</th>
+            <th scope="col" rowspan="2">Código SC9</th>
+            <th scope="col" rowspan="2" id="price-column">Sugerido</th>
+          </tr>
+          <tr class="grade-labels">
+            <th scope="col">Altura<br>mín.</th>
+            <th scope="col">Esf.<br>inicial</th>
+            <th scope="col">Esf.<br>final</th>
+            <th scope="col">Cil.<br>inicial</th>
+            <th scope="col">Cil.<br>final</th>
+            <th scope="col">Adição<br>inicial</th>
+            <th scope="col">Adição<br>final</th>
+            <th scope="col">Diâm.<br>máx.</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <button class="secondary" id="more" type="button" hidden>Mostrar mais produtos</button>
+  </section>
+</main>
+<dialog id="price-dialog" aria-labelledby="price-title">
+  <div class="dialog-inner">
+    <div class="dialog-title">
+      <h2 id="price-title">Escolha a tabela de preço</h2>
+      <form method="dialog"><button class="secondary" type="submit">Fechar</button></form>
+    </div>
+    <div id="price-options" class="price-options"></div>
+  </div>
+</dialog>
+
+<script type="module" src="./app.js"></script>
+</body>
+</html>
